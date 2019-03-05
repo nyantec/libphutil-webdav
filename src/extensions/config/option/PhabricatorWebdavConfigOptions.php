@@ -22,10 +22,15 @@ final class PhabricatorWebdavConfigOptions
 	public function getOptions() {
 		return array(
 			$this->newOption('storage.webdav.base-url', 'string', null)
-				->setDescription(pht('Base URL.')),
+				->setLocked(true)
+				->setSummary(pht('Base URL.')),
 			$this->newOption('storage.webdav.username', 'string', null)
-				->setDescription(pht('Authentication user name.')),
+				->setLocked(true)
+				->setHidden(true)
+				->setSummary(pht('Authentication user name.')),
 			$this->newOption('storage.webdav.password', 'string', null)
-				->setDescription(pht('Authentication password.')));
+				->setLocked(true)
+				->setHidden(true)
+				->setSummary(pht('Authentication password.')));
 	}
 }
