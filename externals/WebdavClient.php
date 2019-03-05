@@ -74,7 +74,7 @@ class WebdavClient {
 	}
 
 	public function get(string $path) {
-		$this->performRequest('GET', $path);
+		return $this->performRequest('GET', $path);
 	}
 
 	public function put(string $path, $body) {
