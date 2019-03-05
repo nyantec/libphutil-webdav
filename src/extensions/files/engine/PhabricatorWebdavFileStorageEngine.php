@@ -18,10 +18,6 @@ final class PhabricatorWebdavFileStorageEngine
 			PhabricatorEnv::getEnvConfig('storage.webdav.password'));
 	}
 
-	public function hasFileSizeLimit() {
-		return false;
-	}
-
 	private function setupWebdavClient() {
 		$libroot = dirname(phutil_get_library_root('libphutil-webdav'));
 		require_once $libroot.'/externals/WebdavClient.php';
