@@ -57,7 +57,10 @@ final class PhabricatorWebdavFileStorageEngine
 		for ($i = 0; $i < count($parts) - 1; ++$i) {
 			$path .= $parts[$i] . '/';
 
-			$webdav->mkcol($path);
+			try {
+				$webdav->mkcol($path);
+			} catch (WebdavClientHttpException $e) {
+			}
 		}
 
 		$path .= end($parts);
