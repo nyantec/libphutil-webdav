@@ -50,7 +50,7 @@ class WebdavClient {
 		curl_setopt($this->curl, CURLOPT_URL, $this->baseUrl . $path);
 	}
 
-	protected function performRequest(string $method, string $path, $body = null) {
+	protected function &performRequest(string $method, string $path, $body = null) {
 		$this->setUrl($path);
 
 		curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $method);
@@ -73,7 +73,7 @@ class WebdavClient {
 		return $response;
 	}
 
-	public function get(string $path) {
+	public function &get(string $path) {
 		return $this->performRequest('GET', $path);
 	}
 
