@@ -8,7 +8,7 @@ final class PhabricatorWebdavFileStorageEngine
 	}
 
 	public function getEnginePriority() {
-		return 0;
+		return 50;
 	}
 
 	public function canWriteFiles() {
